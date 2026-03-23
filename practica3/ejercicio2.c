@@ -1,0 +1,26 @@
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int main( int argc, char *argv[] )
+{
+  int fd;
+  if (argc!=2) {
+    fprintf(stderr, "Uso %s <fichero>\n", argv[0]);
+  }
+  fd = open( argv[1], O_RDWR );
+  if( fd == -1 )
+  {
+    perror( "open" );
+    exit( -1 );
+  }
+
+  printf( "El fichero abierto tiene el descriptor %d.\n", fd );
+
+  close( fd );
+
+  return 0;
+}
