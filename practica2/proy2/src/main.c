@@ -1,6 +1,6 @@
 #define N 255
 #include <stdio.h>
-#include <stdio_ext.h>
+#include <stdio_ext.h>jobs
 #include "cadenas.h"
 int main() 
 {
